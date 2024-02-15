@@ -119,10 +119,10 @@ def testPerformance():
     hash_table_times = {'insert': [], 'retrieve': []}
     dict_times = {'insert': [], 'retrieve': []}
 
-    for n in range(1000):
-        ht = HashTable(n)
-        student_dict = {}
+    ht = HashTable(1000)
+    student_dict = {}
 
+    for n in range(1000):
         students = [Student(i, f"Student {i}") for i in range(n)]
 
         # Performance test for hash table
@@ -160,6 +160,9 @@ def plot_performance(hash_table_times, dict_times):
     plt.legend()
     plt.show()
 
+
+
 hash_table_times, dict_times = testPerformance()
 plot_performance(hash_table_times, dict_times)
+
 
